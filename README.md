@@ -12,11 +12,11 @@ This application is written in Java and requires the JVM/JRE installed on your m
  
 For compiling from source, you will also need a JDK. Please refer to this link (http://www.oracle.com/technetwork/java/javase/index-137561.html) and follow the instructions relevant to your system. 
 
-2. Maven
+2. Maven / Dependency Manager
 
 This project is being developed in intelliJ IDE, using maven for dependency injection. You can use an alternative if you wish.
 
-2. Elevation Source File
+3. Elevation Source File
 
 Unfortunately, github.com has a max file size of 100mb. In order to gain access to the file, please email me at my email address (if you don't have my email address, please visit this[http://visibleearth.nasa.gov/view.php?id=73934] page, download the D2 file and convert it to a bitmap.
 
@@ -39,6 +39,8 @@ Place the D2 elevation bitmap file in the newly created directory.
 Now, you need to compile the source code and run the generated .class file. The simplest method for this is to import the project into intelliJ and run it in the IDE.
 
 You can compile it manually however you will need to manage the dependencies from both source files as well as ensure your classpath is set appropriatetly to point to the compiled .class files.
+
+> I will write a makefile for this in the future.
 
 ###### Mac
 
