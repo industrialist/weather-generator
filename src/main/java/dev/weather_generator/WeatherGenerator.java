@@ -34,7 +34,7 @@ public class WeatherGenerator {
         System.out.println( "Welcome to WeatherGenerator!" );
         System.out.println();
 
-        /**
+        /*
          * Variable declaration:
          */
 
@@ -51,7 +51,7 @@ public class WeatherGenerator {
 
 
 
-        /**
+        /*
          * Read in elevation data from local bitmap file:
          */
 
@@ -67,7 +67,7 @@ public class WeatherGenerator {
 
 
 
-        /**
+        /*
          *  Calculate bitmap elevation scaling factor:
          *
          *  Note: bitmap array starts at (rowNum:0,colNum:0) and goes to (width -1, height -1)
@@ -81,18 +81,20 @@ public class WeatherGenerator {
          *  Note 2: this could have been hard-coded into a constant, but is retained for demonstration purposes.
          */
 
-        // Third argument is 0 for greyscale images
+        /*  Third argument is 0 for greyscale images  */
         elevation = raster.getSample(10798,10798,0);
 
-        // Elevation approximation calculation:
-        // So whatever number is returned from the bitmap,
-        // multiply this by 'factor' to get the elevation in meters.
+        /*  Elevation approximation calculation:
+         *  So whatever number is returned from the bitmap,
+         *  multiply this by 'factor' to get the elevation in meters.
+         */
         double factor = 2801.0/elevation; // = 2801/110 = 25.46363...
 
         String[] locations = {"Sydney|","Adelaide|","Brisbane|","Perth|",
                 "Darwin|","Jakarta|","Casey Stn|","Auckland|","Noumea|"};
 
-        /**0 - Sydney        33.8688° S, 151.2093° E
+        /*
+         * 0 - Sydney        33.8688° S, 151.2093° E
          * 1 - Adelaide      34.9285° S, 138.6007° E
          * 2 - Brisbane      27.4698° S, 153.0251° E
          * 3 - Perth         31.9505° S, 115.8605° E
@@ -117,7 +119,7 @@ public class WeatherGenerator {
                 };
 
 
-        /**
+        /*
          * For each predefined location:
          * (1) concatenate coordinates,
          * (2) retrieve elevation,
@@ -164,7 +166,7 @@ public class WeatherGenerator {
 
         }
 
-        /**
+        /*
          * Output simulated weather to terminal:
          */
 
