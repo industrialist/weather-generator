@@ -8,19 +8,17 @@ Program takes in an elevation file in the form of a bitmap (currently assumes po
 
 1. Java
 
-This application is written in Java and requires the JVM/JRE installed on your machine in order to run the program. 
+ This application is written in Java and requires the JVM/JRE installed on your machine in order to run the program. 
  
-For compiling from source, you will also need a JDK. Please refer to this link (http://www.oracle.com/technetwork/java/javase/index-137561.html) and follow the instructions relevant to your system. 
+ For compiling from source, you will also need a JDK. Please refer to this link (http://www.oracle.com/technetwork/java/javase/index-137561.html) and follow the instructions relevant to your system. 
 
 2. Maven / Dependency Manager
 
-This project is being developed in intelliJ IDE, using maven for dependency injection. You can use an alternative if you wish.
+ This project is being developed in intelliJ IDE, using maven for dependency injection. You can use an alternative if you wish.
 
 3. Elevation Source File
 
-Unfortunately, github.com has a max file size of 100mb. In order to gain access to the file, please email me at my email address (if you don't have my email address, please visit this[http://visibleearth.nasa.gov/view.php?id=73934] page, download the D2 file and convert it to a bitmap.
-
-Once you have the file, place it in the working directory.
+ Unfortunately, github.com has a max file size of 100mb. In order for the program to run without crashing, put unzip the elevation file and place it in the working directory.
 
 #### Running the Program
 
@@ -114,13 +112,13 @@ Noting that there are random dates and times used for each location in the examp
 #### Time of day 
 
 ###### Effect on temperature: 
-Diurnal variation, linearly distributed (max at midday, min at midnight) 
-0-10 degree range 
+- Diurnal variation, linearly distributed (max at midday, min at midnight) 
+- 0-10 degree range 
  
 #### Latitude 
 
 ###### Effect on temperature: 
-Offset: -45 to 10 degree Celsius range, between 0 and –90 degrees latitude 
+- Offset: -45 to 10 degree Celsius range, between 0 and –90 degrees latitude 
  
 #### Conditions 
 
@@ -136,7 +134,7 @@ Offset: -45 to 10 degree Celsius range, between 0 and –90 degrees latitude
  
 #### Humidity 
 
-Offset for latitude and given a random value based on conditions. 
+- Offset for latitude and given a random value based on conditions. 
 
 
 #### References 
