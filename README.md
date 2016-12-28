@@ -18,27 +18,33 @@ Program takes in an elevation file in the form of a bitmap (currently assumes po
 
 3. Elevation Source File
 
- Unfortunately, github.com has a max file size of 100mb. In order for the program to run without crashing, put unzip the elevation file and place it in the working directory.
+ Unfortunately, github.com has a max file size of 100mb. In order for the program to run without crashing, unzip the elevation file and place it in the working directory.
 
 #### Running the Program
 
 ###### Linux
 
-Check your version of Java. This program assumes version 1.8 or higher.
+Check your version of Java and maven. This program assumes Java version 1.8 or higher and maven version 3.3.9.
 
-`java --version`
+`java --version
+mvn --version`
 
 Clone the repository into a new directory:
 
 `git clone https://www.github.com/ramboze/weather-generator.git`
 
-Place the D2 elevation bitmap file in the newly created directory.
+Unzip the D2 elevation bitmap file:
 
-Now, you need to compile the source code and run the generated .class file. The simplest method for this is to import the project into intelliJ and run it in the IDE.
+`cd weather-generator
+unzip elev_D2.bmp.zip`
 
-You can compile it manually however you will need to manage the dependencies from both source files as well as ensure your classpath is set appropriatetly to point to the compiled .class files.
+Compile using maven:
 
-> I will write a makefile for this in the future.
+`mvn compile`
+
+Run using Javac:
+
+`java -cp ./target/classes dev.weather_generator.WeatherGenerator`
 
 ###### Mac
 
@@ -54,7 +60,6 @@ ToDo: add installation notes.
 - I have designed in some meteorological approximations – see additional notes below. 
 - I have assumed that the third parameter in "Position" is elevation. 
 - The spec calls for 'a reasonable number of positions'. I have assumed this means print data for approximately 10 locations (not positions as defined in the table). I have selected 10 cities located within the map, given below. Note, this means the locations weather are independent. 
-
  - Sydney        33.8688° S, 151.2093° E 
  - Adelaide      34.9285° S, 138.6007° E 
  - Brisbane      27.4698° S, 153.0251° E 
@@ -94,8 +99,7 @@ Noting that there are random dates and times used for each location in the examp
 ###### Effect on pressure: 
 - Pressure range is 14.7psi (1,013.565hPa) at 0m elevation; 1.6psi (110.32hPa) at 15,240m elevation. 
 - 1psi = 6,894.76Pa = 68.95hPa 
-- Assumed linear. 
-- So, assuming a typical daily pressure range is 980-1,050hPa at sea level, every 25m of elevation will reduce pressure approximately 1.47hPa: 
+- Assumed linear. - So, assuming a typical daily pressure range is 980-1,050hPa at sea level, every 25m of elevation will reduce pressure approximately 1.47hPa: 
  - 15,240/(1,013-110) = 17m per hPa 
  - 25m/17m = 1.47hPa per 25m 
  
