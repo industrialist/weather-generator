@@ -26,8 +26,10 @@ Program takes in an elevation file in the form of a bitmap (currently assumes po
 
 Check your version of Java and maven. This program assumes Java version 1.8 or higher and maven version 3.3.9.
 
-`java --version
-mvn --version`
+```
+java --version
+mvn --version
+```
 
 Clone the repository into a new directory:
 
@@ -35,8 +37,10 @@ Clone the repository into a new directory:
 
 Unzip the D2 elevation bitmap file:
 
-`cd weather-generator
-unzip elev_D2.bmp.zip`
+```
+cd weather-generator
+unzip elev_D2.bmp.zip
+```
 
 Compile using maven:
 
